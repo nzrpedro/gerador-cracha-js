@@ -7,13 +7,30 @@
 <body>
 
     <script>
-        // Solicitando dados
+        // Solicitando dados/pergunta se é aluno
         var nome = prompt("Qual é o seu nome?");
         var sobrenome = prompt("Qual é o seu sobrenome?");
         var anoNascimento = prompt("Em que ano nasceu?");
-
-        // Pergunta se é aluno
         var alunoAtivo = confirm("É aluno ativo da instituição?");
+
+        // Converte o ano de string pra número
+        anoNascimento = Number(anoNascimento);
+
+        // Calculo de idade estimada
+        var anoAtual = new Date().getFullYear();
+        var idadeEstimada = anoAtual - anoNascimento;
+
+        // Sobrenome em maiúsculas
+        var sobrenomeMaiusculo = sobrenome.toUpperCase();
+
+        // Quantidade de caracteres do primeiro nome
+        var tamanhoNome = nome.length;
+
+        // Saída final
+        console.log("CRACHÁ VIRTUAL: " + sobrenomeMaiusculo + ", " + nome);
+        console.log("Idade estimada: " + idadeEstimada + " anos.");
+        console.log("O seu primeiro nome tem " + tamanhoNome + " letras.");
+        console.log("Estatuto de aluno ativo: " + alunoAtivo);
     </script>
 </body>
 </html>
